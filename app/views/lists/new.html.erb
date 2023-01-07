@@ -1,7 +1,10 @@
 <div class = "container">
-  <h1>New list !</h1>
+  <h1>New list</h1>
   <%= simple_form_for [@list] do |f| %>
     <%= f.input :name %>
-    <%= f.submit "Submit review", class: "btn btn-primary rounded-pill" %>
+    <div class="d-flex justify-content-start align-items-center">
+      <%= f.submit "Submit list", class: "btn btn-secondary rounded-pill me-2" %>
+      <%= link_to "Back to lists", lists_path, class: "btn btn-secondary rounded-pill" %>
+    </div>
   <% end %>
 </div>
