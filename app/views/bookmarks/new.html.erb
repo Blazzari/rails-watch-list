@@ -1,4 +1,12 @@
 <div class = "container">
-  <h1>New bookmark</h1>
-  <%= link_to "Back to #{@list.name}", list_path(@list), class: "btn btn-secondary rounded-pill"%>
+    <h1>New movie</h1>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :movie_id, :collection => @movies%>
+    <%= f.input :comment %>
+    <div class="d-flex justify-content-start align-items-center">
+      <%= f.submit "Submit movie", class: "btn btn-secondary rounded-pill me-2" %>
+      <%= link_to "back to list", list_path(@list), class: "btn btn-secondary rounded-pill"%>
+    </div>
+  <% end %>
+
 </div>
