@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :lists, only: %i[new create index show] do
     resources :bookmarks, only: %i[new create]
   end
+  resources :bookmarks, only: %i[destroy]
 end
 
 # rails g controller movies index show new create edit update destroy

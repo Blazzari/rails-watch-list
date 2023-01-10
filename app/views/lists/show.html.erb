@@ -9,7 +9,10 @@
 
     <% @bookmarks.each do |bookmark| %>
       <div class ="card">
-        <%= render bookmark %>
+        <div class ="d-flex align-items-center justify-content-between">
+          <%= bookmark.movie.title %>
+          <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </div>
       </div>
     <% end %>
 </div>
