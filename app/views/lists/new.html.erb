@@ -2,6 +2,7 @@
   <h1>New list</h1>
   <%= simple_form_for [@list] do |f| %>
     <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
     <div class="d-flex justify-content-start align-items-center">
       <%= f.submit "Submit list", class: "btn btn-secondary rounded-pill me-2" %>
       <%= link_to "Back to lists", lists_path, class: "btn btn-secondary rounded-pill" %>

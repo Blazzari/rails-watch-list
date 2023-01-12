@@ -5,7 +5,10 @@
   </div>
   <% @lists.each do |list|  %>
     <div class="card p-2">
-      <p><%= link_to "#{list.name}", list_path(list)%></p>
+      <div class="d-flex justify-content-start align-items-center">
+        <%= cl_image_tag list.photo.key, height: 100, width: 100, crop: :fill, class: "me-2" %>
+        <p><%= link_to "#{list.name}", list_path(list)%></p>
+      </div>
     </div>
   <%end%>
 </div>
