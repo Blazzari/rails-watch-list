@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="d-flex justify-content-between align-items-center">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <%= cl_image_tag @list.photo.key, height: 300, width: 300, crop: :fill %>
     <h1><%= @list.name %></h1>
     <div class="d-flex justify-content-start align-items-center">
       <%= link_to "Add movie", new_list_bookmark_path(@list), class: "btn btn-secondary rounded-pill me-2" %>
@@ -7,12 +8,12 @@
     </div>
   </div>
 
-    <% @bookmarks.each do |bookmark| %>
-      <div class ="card">
-        <div class ="d-flex align-items-center justify-content-between">
-          <%= bookmark.movie.title %>
-          <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-        </div>
+  <% @bookmarks.each do |bookmark| %>
+    <div class ="card">
+      <div class ="d-flex align-items-center justify-content-between">
+        <%= bookmark.movie.title %>
+        <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
       </div>
+    </div>
     <% end %>
 </div>
