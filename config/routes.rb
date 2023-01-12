@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: 'lists#index'
   resources :movies
   resources :lists, only: %i[new create index show] do
     resources :bookmarks, only: %i[new create]
